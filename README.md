@@ -8,13 +8,17 @@ Java RESTful API criada para a Santander Dev Week.
 classDiagram
     class User {
         +String name
+        - Account account
+        - Feature[] features
+        - Card card
+        - News[] news
     }
 
     class Account {
-        +String accountNumber
-        +String accountAgency
-        +Double accountBalance
-        +Double accountLimit
+        +String Number
+        +String Agency
+        +Double Balance
+        +Double Limit
     }
 
     class Feature {
@@ -32,8 +36,8 @@ classDiagram
         +String description
     }
 
-    User --> Account : has a
-    User --> Card : has a
-    User --> Feature : has many
-    User --> News : has many
+    User "1" *--> "1" Account
+    User "1" *--> "1" Card
+    User "1" *--> "N" Feature
+    User "1" *--> "N" New
 ```
