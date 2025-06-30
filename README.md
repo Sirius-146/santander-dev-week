@@ -15,29 +15,29 @@ classDiagram
     }
 
     class Account {
-        +String Number
-        +String Agency
-        +Double Balance
-        +Double Limit
+        - String Number
+        - String Agency
+        - Double Balance
+        - Double Limit
     }
 
     class Feature {
-        +String icon
-        +String description
+        - String icon
+        - String description
     }
 
     class Card {
-        +String number
-        +Double limit
+        - String number
+        - Double limit
     }
 
     class News {
-        +String icon
-        +String description
+        - String icon
+        - String description
     }
 
     User "1" *--> "1" Account
     User "1" *--> "1" Card
     User "1" *--> "N" Feature
-    User "1" *--> "N" New
+    User "1" *--> "N" News
 ```
